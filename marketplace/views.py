@@ -5,7 +5,7 @@ from .models import Item
 #render marketplace index page with all items
 def index(request):
     items = Item.objects.all()
-    return render(request, 'marketplace/index.html', {
+    return render(request, 'index.html', {
         'items': items,
     })
 
