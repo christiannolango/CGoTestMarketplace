@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import RedirectView
 
 urlpatterns = [
+    # Serve the marketplace app at the site root
+    path('', include(('marketplace.urls', 'marketplace'), namespace='marketplace')),
+
+    # Preserve old /marketplace/ URL by redirecting to the namespaced index
+    path('marketplace/', RedirectView.as_view(pattern_name='marketplace:index', permanent=False)),
+
     path('members/', include('members.urls')),
-    path('marketplace/', include(('marketplace.urls', 'marketplace'), namespace='marketplace')),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
 ]
