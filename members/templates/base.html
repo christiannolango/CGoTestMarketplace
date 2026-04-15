@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CGo Marketplace{% endblock %}</title>
+    <!-- Using Tailwind CSS for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <nav class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-indigo-600">CGo Marketplace</a>
+            <div>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 px-3 transition">Home</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 px-3 transition">Cart (0)</a>
+            </div>
+        </div>
+    </nav>
+    <main class="container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

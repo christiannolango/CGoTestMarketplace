@@ -12,6 +12,6 @@ def index(request):
 #render marketplace item detail page
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
-    return render(request, 'marketplace/detail.html', {
+    return render(request, 'detail.html', {
         'item': item,
     })
